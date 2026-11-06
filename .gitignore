@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.*
+!.env.example
+projects/bikewise/artifacts/*
+!projects/bikewise/artifacts/.gitkeep
+*.log
+projects/bikewise/data/hour.csv
+projects/bikewise/data/Readme.txt
+
+
