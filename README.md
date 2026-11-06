@@ -1,3 +1,5 @@
+> **Note:** Projects have moved to separate repositories: [BikeWise](https://github.com/oghorpade060-eng/BikeWise), [MessageLab](https://github.com/oghorpade060-eng/MessageLab), [LibraryLens](https://github.com/oghorpade060-eng/LibraryLens).
+
 <p align="center"><img src="assets/header.svg" width="100%" alt="Onkar Ghorpade — AI & Data Science student. Python, SQL and machine learning."></p>
 
 <p align="center">
@@ -85,3 +87,4 @@ Next: build a stronger foundation in PyTorch, then study retrieval and RAG. Thes
 [LinkedIn](https://www.linkedin.com/in/onkar-ghorpade-3b1162376/) · [Kaggle](https://www.kaggle.com/OnkarGhorpade) · [oghorpade060@gmail.com](mailto:oghorpade060@gmail.com)
 
 <sub>Source and dataset credits are included in the project documentation. The learning log is for recording work I have run, changed and can explain.</sub>
+
