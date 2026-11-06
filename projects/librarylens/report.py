@@ -112,7 +112,7 @@ def build(output, as_of=AS_OF):
               "tables": {"books": 12, "members": 48}, "queries": queries}
     for name, rows in queries.items():
         with (output / f"{name}.csv").open("w", newline="", encoding="utf-8") as stream:
-            writer = csv.DictWriter(stream, fieldnames=columns[name])
+            writer = csv.DictWriter(stream, fieldnames=columns[name], lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
     (output / "summary.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
