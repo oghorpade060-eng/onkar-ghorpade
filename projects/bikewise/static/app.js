@@ -3,6 +3,8 @@ const $ = (id) => document.getElementById(id);
 const format = new Intl.NumberFormat("en-US");
 const svgNS = "http://www.w3.org/2000/svg";
 let report;
+const chartSpecs = new Map();
+let resizeTimer;
 
 function svg(tag, attrs = {}, text) {
   const el = document.createElementNS(svgNS, tag);
@@ -19,14 +21,27 @@ function route() {
     item.classList.toggle("active", active);
     if (active) item.setAttribute("aria-current", "page"); else item.removeAttribute("aria-current");
   }
+  requestAnimationFrame(redrawVisibleCharts);
 }
 window.addEventListener("hashchange", route);
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(redrawVisibleCharts, 100);
+});
 route();
+
+function redrawVisibleCharts() {
+  for (const [id, args] of chartSpecs) {
+    if ($(id).offsetParent !== null) lineChart(id, ...args);
+  }
+}
 
 function lineChart(id, data, series, title, xLabel) {
   const container = $(id);
+  chartSpecs.set(id, [data, series, title, xLabel]);
   container.replaceChildren();
-  const width = id === "actual-chart" ? 940 : 440, height = id === "actual-chart" ? 215 : 190;
+  const width = Math.max(280, Math.round(container.clientWidth));
+  const height = id === "actual-chart" ? 230 : 190;
   const pad = {left: 40, right: 12, top: 12, bottom: 29};
   const w = width - pad.left - pad.right, h = height - pad.top - pad.bottom;
   const max = Math.max(1, ...data.flatMap(row => series.map(s => row[s.key])));
@@ -38,7 +53,7 @@ function lineChart(id, data, series, title, xLabel) {
     drawing.append(svg("line", {x1:pad.left, y1:y, x2:width-pad.right, y2:y, stroke:"#e6ebe2", "stroke-dasharray":"3 4"}));
     drawing.append(svg("text", {x:pad.left-8, y:y+3, "text-anchor":"end"}, Math.round(ceiling*(1-i/4))));
   }
-  const ticks = id === "actual-chart" ? 7 : 5;
+  const ticks = id === "actual-chart" && width > 600 ? 7 : 5;
   for(let i=0;i<ticks;i++) {
     const index = Math.round((data.length-1)*i/(ticks-1));
     drawing.append(svg("text", {x:pad.left+w*index/(data.length-1),y:height-6,"text-anchor": i===0?"start":i===ticks-1?"end":"middle"}, xLabel(data[index])));
