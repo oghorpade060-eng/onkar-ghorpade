@@ -1,0 +1,1229 @@
+{
+  "metrics": {
+    "selected_model": "Gradient boosting",
+    "selection_rule": "Lowest validation MAE; test set never used to choose a model.",
+    "dataset_rows": 17379,
+    "dataset_sha256": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f",
+    "features": [
+      "season",
+      "yr",
+      "mnth",
+      "hr",
+      "holiday",
+      "weekday",
+      "workingday",
+      "weathersit",
+      "temp",
+      "hum",
+      "windspeed"
+    ],
+    "excluded_columns": [
+      "instant",
+      "dteday",
+      "atemp",
+      "casual",
+      "registered",
+      "cnt"
+    ],
+    "splits": {
+      "train": {
+        "rows": 13003,
+        "start": "2011-01-01",
+        "end": "2012-06-30"
+      },
+      "validation": {
+        "rows": 2208,
+        "start": "2012-07-01",
+        "end": "2012-09-30"
+      },
+      "test": {
+        "rows": 2168,
+        "start": "2012-10-01",
+        "end": "2012-12-31"
+      }
+    },
+    "final_fit": {
+      "rows": 15211,
+      "start": "2011-01-01",
+      "end": "2012-09-30"
+    },
+    "models": [
+      {
+        "model": "Mean baseline",
+        "validation": {
+          "mae": 197.829,
+          "rmse": 260.65,
+          "r2": -0.2726
+        },
+        "test": {
+          "mae": 156.868,
+          "rmse": 204.428,
+          "r2": -0.0284
+        }
+      },
+      {
+        "model": "Ridge regression",
+        "validation": {
+          "mae": 111.93,
+          "rmse": 146.839,
+          "r2": 0.5961
+        },
+        "test": {
+          "mae": 89.511,
+          "rmse": 121.782,
+          "r2": 0.635
+        }
+      },
+      {
+        "model": "Gradient boosting",
+        "validation": {
+          "mae": 50.238,
+          "rmse": 76.957,
+          "r2": 0.8891
+        },
+        "test": {
+          "mae": 46.994,
+          "rmse": 71.129,
+          "r2": 0.8755
+        }
+      }
+    ],
+    "versions": {
+      "python": "3.12.14",
+      "sklearn": "1.8.0",
+      "pandas": "2.2.3",
+      "numpy": "2.3.5"
+    },
+    "method": {
+      "seed": 42,
+      "clamp_negative_predictions": true,
+      "early_stopping": false,
+      "importance": "Permutation importance on validation set, before refitting. Increase in MAE; association, not causation."
+    }
+  },
+  "selected_test": {
+    "mae": 46.994,
+    "rmse": 71.129,
+    "r2": 0.8755
+  },
+  "total_rentals": 3292679,
+  "hourly": [
+    {
+      "hour": 0,
+      "working": 36.8,
+      "nonworking": 90.8
+    },
+    {
+      "hour": 1,
+      "working": 16.6,
+      "nonworking": 69.5
+    },
+    {
+      "hour": 2,
+      "working": 8.7,
+      "nonworking": 53.2
+    },
+    {
+      "hour": 3,
+      "working": 4.9,
+      "nonworking": 25.8
+    },
+    {
+      "hour": 4,
+      "working": 5.4,
+      "nonworking": 8.3
+    },
+    {
+      "hour": 5,
+      "working": 24.9,
+      "nonworking": 8.7
+    },
+    {
+      "hour": 6,
+      "working": 102.5,
+      "nonworking": 18.7
+    },
+    {
+      "hour": 7,
+      "working": 290.6,
+      "nonworking": 43.4
+    },
+    {
+      "hour": 8,
+      "working": 477.0,
+      "nonworking": 105.7
+    },
+    {
+      "hour": 9,
+      "working": 241.5,
+      "nonworking": 171.6
+    },
+    {
+      "hour": 10,
+      "working": 135.4,
+      "nonworking": 255.9
+    },
+    {
+      "hour": 11,
+      "working": 158.2,
+      "nonworking": 315.3
+    },
+    {
+      "hour": 12,
+      "working": 200.8,
+      "nonworking": 366.3
+    },
+    {
+      "hour": 13,
+      "working": 198.4,
+      "nonworking": 372.7
+    },
+    {
+      "hour": 14,
+      "working": 183.6,
+      "nonworking": 364.6
+    },
+    {
+      "hour": 15,
+      "working": 201.3,
+      "nonworking": 358.8
+    },
+    {
+      "hour": 16,
+      "working": 293.1,
+      "nonworking": 352.7
+    },
+    {
+      "hour": 17,
+      "working": 525.3,
+      "nonworking": 323.5
+    },
+    {
+      "hour": 18,
+      "working": 492.2,
+      "nonworking": 281.1
+    },
+    {
+      "hour": 19,
+      "working": 348.4,
+      "nonworking": 231.7
+    },
+    {
+      "hour": 20,
+      "working": 249.7,
+      "nonworking": 174.7
+    },
+    {
+      "hour": 21,
+      "working": 186.3,
+      "nonworking": 142.1
+    },
+    {
+      "hour": 22,
+      "working": 138.4,
+      "nonworking": 116.1
+    },
+    {
+      "hour": 23,
+      "working": 88.7,
+      "nonworking": 85.9
+    }
+  ],
+  "test_hour_mae": [
+    {
+      "hour": 0,
+      "mae": 20.06
+    },
+    {
+      "hour": 1,
+      "mae": 15.73
+    },
+    {
+      "hour": 2,
+      "mae": 9.92
+    },
+    {
+      "hour": 3,
+      "mae": 5.37
+    },
+    {
+      "hour": 4,
+      "mae": 2.79
+    },
+    {
+      "hour": 5,
+      "mae": 8.11
+    },
+    {
+      "hour": 6,
+      "mae": 21.11
+    },
+    {
+      "hour": 7,
+      "mae": 62.11
+    },
+    {
+      "hour": 8,
+      "mae": 98.85
+    },
+    {
+      "hour": 9,
+      "mae": 56.35
+    },
+    {
+      "hour": 10,
+      "mae": 35.91
+    },
+    {
+      "hour": 11,
+      "mae": 40.12
+    },
+    {
+      "hour": 12,
+      "mae": 58.77
+    },
+    {
+      "hour": 13,
+      "mae": 52.97
+    },
+    {
+      "hour": 14,
+      "mae": 50.98
+    },
+    {
+      "hour": 15,
+      "mae": 59.97
+    },
+    {
+      "hour": 16,
+      "mae": 85.74
+    },
+    {
+      "hour": 17,
+      "mae": 111.71
+    },
+    {
+      "hour": 18,
+      "mae": 101.11
+    },
+    {
+      "hour": 19,
+      "mae": 81.42
+    },
+    {
+      "hour": 20,
+      "mae": 48.58
+    },
+    {
+      "hour": 21,
+      "mae": 41.86
+    },
+    {
+      "hour": 22,
+      "mae": 30.26
+    },
+    {
+      "hour": 23,
+      "mae": 24.56
+    }
+  ],
+  "sample": [
+    {
+      "time": "2012-10-01 00:00",
+      "actual": 45,
+      "predicted": 48.8
+    },
+    {
+      "time": "2012-10-01 01:00",
+      "actual": 18,
+      "predicted": 19.9
+    },
+    {
+      "time": "2012-10-01 02:00",
+      "actual": 12,
+      "predicted": 10.9
+    },
+    {
+      "time": "2012-10-01 03:00",
+      "actual": 7,
+      "predicted": 6.4
+    },
+    {
+      "time": "2012-10-01 04:00",
+      "actual": 10,
+      "predicted": 6.6
+    },
+    {
+      "time": "2012-10-01 05:00",
+      "actual": 36,
+      "predicted": 31.7
+    },
+    {
+      "time": "2012-10-01 06:00",
+      "actual": 155,
+      "predicted": 139.8
+    },
+    {
+      "time": "2012-10-01 07:00",
+      "actual": 483,
+      "predicted": 486.7
+    },
+    {
+      "time": "2012-10-01 08:00",
+      "actual": 784,
+      "predicted": 710.6
+    },
+    {
+      "time": "2012-10-01 09:00",
+      "actual": 340,
+      "predicted": 336.2
+    },
+    {
+      "time": "2012-10-01 10:00",
+      "actual": 179,
+      "predicted": 199.7
+    },
+    {
+      "time": "2012-10-01 11:00",
+      "actual": 272,
+      "predicted": 233.7
+    },
+    {
+      "time": "2012-10-01 12:00",
+      "actual": 323,
+      "predicted": 310.5
+    },
+    {
+      "time": "2012-10-01 13:00",
+      "actual": 305,
+      "predicted": 295.3
+    },
+    {
+      "time": "2012-10-01 14:00",
+      "actual": 244,
+      "predicted": 259.8
+    },
+    {
+      "time": "2012-10-01 15:00",
+      "actual": 329,
+      "predicted": 276.9
+    },
+    {
+      "time": "2012-10-01 16:00",
+      "actual": 459,
+      "predicted": 421.0
+    },
+    {
+      "time": "2012-10-01 17:00",
+      "actual": 856,
+      "predicted": 594.9
+    },
+    {
+      "time": "2012-10-01 18:00",
+      "actual": 613,
+      "predicted": 572.0
+    },
+    {
+      "time": "2012-10-01 19:00",
+      "actual": 516,
+      "predicted": 472.2
+    },
+    {
+      "time": "2012-10-01 20:00",
+      "actual": 262,
+      "predicted": 255.0
+    },
+    {
+      "time": "2012-10-01 21:00",
+      "actual": 218,
+      "predicted": 258.6
+    },
+    {
+      "time": "2012-10-01 22:00",
+      "actual": 207,
+      "predicted": 130.7
+    },
+    {
+      "time": "2012-10-01 23:00",
+      "actual": 105,
+      "predicted": 76.2
+    },
+    {
+      "time": "2012-10-02 00:00",
+      "actual": 31,
+      "predicted": 40.9
+    },
+    {
+      "time": "2012-10-02 01:00",
+      "actual": 11,
+      "predicted": 19.6
+    },
+    {
+      "time": "2012-10-02 02:00",
+      "actual": 2,
+      "predicted": 11.6
+    },
+    {
+      "time": "2012-10-02 03:00",
+      "actual": 5,
+      "predicted": 6.8
+    },
+    {
+      "time": "2012-10-02 04:00",
+      "actual": 10,
+      "predicted": 7.3
+    },
+    {
+      "time": "2012-10-02 05:00",
+      "actual": 43,
+      "predicted": 30.9
+    },
+    {
+      "time": "2012-10-02 06:00",
+      "actual": 179,
+      "predicted": 101.8
+    },
+    {
+      "time": "2012-10-02 07:00",
+      "actual": 260,
+      "predicted": 230.7
+    },
+    {
+      "time": "2012-10-02 08:00",
+      "actual": 134,
+      "predicted": 343.2
+    },
+    {
+      "time": "2012-10-02 09:00",
+      "actual": 86,
+      "predicted": 185.6
+    },
+    {
+      "time": "2012-10-02 10:00",
+      "actual": 45,
+      "predicted": 107.5
+    },
+    {
+      "time": "2012-10-02 11:00",
+      "actual": 99,
+      "predicted": 88.5
+    },
+    {
+      "time": "2012-10-02 12:00",
+      "actual": 104,
+      "predicted": 209.7
+    },
+    {
+      "time": "2012-10-02 13:00",
+      "actual": 154,
+      "predicted": 198.5
+    },
+    {
+      "time": "2012-10-02 14:00",
+      "actual": 163,
+      "predicted": 104.7
+    },
+    {
+      "time": "2012-10-02 15:00",
+      "actual": 209,
+      "predicted": 130.3
+    },
+    {
+      "time": "2012-10-02 16:00",
+      "actual": 374,
+      "predicted": 157.7
+    },
+    {
+      "time": "2012-10-02 17:00",
+      "actual": 715,
+      "predicted": 315.4
+    },
+    {
+      "time": "2012-10-02 18:00",
+      "actual": 687,
+      "predicted": 229.4
+    },
+    {
+      "time": "2012-10-02 19:00",
+      "actual": 395,
+      "predicted": 194.7
+    },
+    {
+      "time": "2012-10-02 20:00",
+      "actual": 306,
+      "predicted": 135.8
+    },
+    {
+      "time": "2012-10-02 21:00",
+      "actual": 289,
+      "predicted": 114.0
+    },
+    {
+      "time": "2012-10-02 22:00",
+      "actual": 240,
+      "predicted": 159.1
+    },
+    {
+      "time": "2012-10-02 23:00",
+      "actual": 98,
+      "predicted": 115.3
+    },
+    {
+      "time": "2012-10-03 00:00",
+      "actual": 52,
+      "predicted": 33.5
+    },
+    {
+      "time": "2012-10-03 01:00",
+      "actual": 19,
+      "predicted": 25.8
+    },
+    {
+      "time": "2012-10-03 02:00",
+      "actual": 9,
+      "predicted": 14.4
+    },
+    {
+      "time": "2012-10-03 03:00",
+      "actual": 7,
+      "predicted": 7.1
+    },
+    {
+      "time": "2012-10-03 04:00",
+      "actual": 11,
+      "predicted": 6.5
+    },
+    {
+      "time": "2012-10-03 05:00",
+      "actual": 34,
+      "predicted": 30.7
+    },
+    {
+      "time": "2012-10-03 06:00",
+      "actual": 177,
+      "predicted": 139.8
+    },
+    {
+      "time": "2012-10-03 07:00",
+      "actual": 515,
+      "predicted": 345.4
+    },
+    {
+      "time": "2012-10-03 08:00",
+      "actual": 809,
+      "predicted": 611.6
+    },
+    {
+      "time": "2012-10-03 09:00",
+      "actual": 362,
+      "predicted": 327.0
+    },
+    {
+      "time": "2012-10-03 10:00",
+      "actual": 175,
+      "predicted": 192.0
+    },
+    {
+      "time": "2012-10-03 11:00",
+      "actual": 230,
+      "predicted": 215.1
+    },
+    {
+      "time": "2012-10-03 12:00",
+      "actual": 358,
+      "predicted": 320.2
+    },
+    {
+      "time": "2012-10-03 13:00",
+      "actual": 279,
+      "predicted": 296.8
+    },
+    {
+      "time": "2012-10-03 14:00",
+      "actual": 251,
+      "predicted": 259.6
+    },
+    {
+      "time": "2012-10-03 15:00",
+      "actual": 319,
+      "predicted": 295.7
+    },
+    {
+      "time": "2012-10-03 16:00",
+      "actual": 478,
+      "predicted": 433.0
+    },
+    {
+      "time": "2012-10-03 17:00",
+      "actual": 917,
+      "predicted": 791.2
+    },
+    {
+      "time": "2012-10-03 18:00",
+      "actual": 810,
+      "predicted": 757.7
+    },
+    {
+      "time": "2012-10-03 19:00",
+      "actual": 593,
+      "predicted": 564.3
+    },
+    {
+      "time": "2012-10-03 20:00",
+      "actual": 497,
+      "predicted": 435.7
+    },
+    {
+      "time": "2012-10-03 21:00",
+      "actual": 209,
+      "predicted": 295.8
+    },
+    {
+      "time": "2012-10-03 22:00",
+      "actual": 241,
+      "predicted": 225.6
+    },
+    {
+      "time": "2012-10-03 23:00",
+      "actual": 220,
+      "predicted": 132.4
+    },
+    {
+      "time": "2012-10-04 00:00",
+      "actual": 76,
+      "predicted": 38.0
+    },
+    {
+      "time": "2012-10-04 01:00",
+      "actual": 25,
+      "predicted": 24.6
+    },
+    {
+      "time": "2012-10-04 02:00",
+      "actual": 13,
+      "predicted": 15.6
+    },
+    {
+      "time": "2012-10-04 03:00",
+      "actual": 11,
+      "predicted": 6.6
+    },
+    {
+      "time": "2012-10-04 04:00",
+      "actual": 10,
+      "predicted": 7.3
+    },
+    {
+      "time": "2012-10-04 05:00",
+      "actual": 39,
+      "predicted": 25.3
+    },
+    {
+      "time": "2012-10-04 06:00",
+      "actual": 133,
+      "predicted": 88.3
+    },
+    {
+      "time": "2012-10-04 07:00",
+      "actual": 391,
+      "predicted": 384.5
+    },
+    {
+      "time": "2012-10-04 08:00",
+      "actual": 738,
+      "predicted": 644.7
+    },
+    {
+      "time": "2012-10-04 09:00",
+      "actual": 359,
+      "predicted": 299.6
+    },
+    {
+      "time": "2012-10-04 10:00",
+      "actual": 177,
+      "predicted": 179.5
+    },
+    {
+      "time": "2012-10-04 11:00",
+      "actual": 214,
+      "predicted": 248.0
+    },
+    {
+      "time": "2012-10-04 12:00",
+      "actual": 288,
+      "predicted": 325.1
+    },
+    {
+      "time": "2012-10-04 13:00",
+      "actual": 294,
+      "predicted": 299.7
+    },
+    {
+      "time": "2012-10-04 14:00",
+      "actual": 267,
+      "predicted": 289.0
+    },
+    {
+      "time": "2012-10-04 15:00",
+      "actual": 325,
+      "predicted": 322.7
+    },
+    {
+      "time": "2012-10-04 16:00",
+      "actual": 497,
+      "predicted": 472.0
+    },
+    {
+      "time": "2012-10-04 17:00",
+      "actual": 901,
+      "predicted": 877.0
+    },
+    {
+      "time": "2012-10-04 18:00",
+      "actual": 887,
+      "predicted": 829.3
+    },
+    {
+      "time": "2012-10-04 19:00",
+      "actual": 534,
+      "predicted": 595.0
+    },
+    {
+      "time": "2012-10-04 20:00",
+      "actual": 441,
+      "predicted": 421.6
+    },
+    {
+      "time": "2012-10-04 21:00",
+      "actual": 321,
+      "predicted": 302.7
+    },
+    {
+      "time": "2012-10-04 22:00",
+      "actual": 232,
+      "predicted": 225.8
+    },
+    {
+      "time": "2012-10-04 23:00",
+      "actual": 155,
+      "predicted": 139.9
+    },
+    {
+      "time": "2012-10-05 00:00",
+      "actual": 102,
+      "predicted": 59.3
+    },
+    {
+      "time": "2012-10-05 01:00",
+      "actual": 46,
+      "predicted": 27.0
+    },
+    {
+      "time": "2012-10-05 02:00",
+      "actual": 11,
+      "predicted": 14.0
+    },
+    {
+      "time": "2012-10-05 03:00",
+      "actual": 16,
+      "predicted": 7.4
+    },
+    {
+      "time": "2012-10-05 04:00",
+      "actual": 11,
+      "predicted": 7.9
+    },
+    {
+      "time": "2012-10-05 05:00",
+      "actual": 41,
+      "predicted": 32.1
+    },
+    {
+      "time": "2012-10-05 06:00",
+      "actual": 137,
+      "predicted": 156.1
+    },
+    {
+      "time": "2012-10-05 07:00",
+      "actual": 428,
+      "predicted": 465.7
+    },
+    {
+      "time": "2012-10-05 08:00",
+      "actual": 785,
+      "predicted": 679.8
+    },
+    {
+      "time": "2012-10-05 09:00",
+      "actual": 384,
+      "predicted": 373.4
+    },
+    {
+      "time": "2012-10-05 10:00",
+      "actual": 260,
+      "predicted": 241.8
+    },
+    {
+      "time": "2012-10-05 11:00",
+      "actual": 304,
+      "predicted": 283.5
+    },
+    {
+      "time": "2012-10-05 12:00",
+      "actual": 468,
+      "predicted": 375.4
+    },
+    {
+      "time": "2012-10-05 13:00",
+      "actual": 424,
+      "predicted": 368.9
+    },
+    {
+      "time": "2012-10-05 14:00",
+      "actual": 400,
+      "predicted": 344.4
+    },
+    {
+      "time": "2012-10-05 15:00",
+      "actual": 470,
+      "predicted": 370.8
+    },
+    {
+      "time": "2012-10-05 16:00",
+      "actual": 634,
+      "predicted": 538.5
+    },
+    {
+      "time": "2012-10-05 17:00",
+      "actual": 900,
+      "predicted": 837.1
+    },
+    {
+      "time": "2012-10-05 18:00",
+      "actual": 761,
+      "predicted": 730.5
+    },
+    {
+      "time": "2012-10-05 19:00",
+      "actual": 500,
+      "predicted": 491.8
+    },
+    {
+      "time": "2012-10-05 20:00",
+      "actual": 372,
+      "predicted": 357.4
+    },
+    {
+      "time": "2012-10-05 21:00",
+      "actual": 267,
+      "predicted": 299.7
+    },
+    {
+      "time": "2012-10-05 22:00",
+      "actual": 264,
+      "predicted": 221.5
+    },
+    {
+      "time": "2012-10-05 23:00",
+      "actual": 171,
+      "predicted": 168.2
+    },
+    {
+      "time": "2012-10-06 00:00",
+      "actual": 191,
+      "predicted": 152.7
+    },
+    {
+      "time": "2012-10-06 01:00",
+      "actual": 141,
+      "predicted": 109.4
+    },
+    {
+      "time": "2012-10-06 02:00",
+      "actual": 75,
+      "predicted": 72.5
+    },
+    {
+      "time": "2012-10-06 03:00",
+      "actual": 56,
+      "predicted": 30.2
+    },
+    {
+      "time": "2012-10-06 04:00",
+      "actual": 11,
+      "predicted": 11.5
+    },
+    {
+      "time": "2012-10-06 05:00",
+      "actual": 10,
+      "predicted": 18.0
+    },
+    {
+      "time": "2012-10-06 06:00",
+      "actual": 30,
+      "predicted": 45.7
+    },
+    {
+      "time": "2012-10-06 07:00",
+      "actual": 84,
+      "predicted": 62.6
+    },
+    {
+      "time": "2012-10-06 08:00",
+      "actual": 206,
+      "predicted": 183.5
+    },
+    {
+      "time": "2012-10-06 09:00",
+      "actual": 395,
+      "predicted": 335.6
+    },
+    {
+      "time": "2012-10-06 10:00",
+      "actual": 539,
+      "predicted": 445.0
+    },
+    {
+      "time": "2012-10-06 11:00",
+      "actual": 647,
+      "predicted": 574.6
+    },
+    {
+      "time": "2012-10-06 12:00",
+      "actual": 743,
+      "predicted": 582.2
+    },
+    {
+      "time": "2012-10-06 13:00",
+      "actual": 710,
+      "predicted": 477.8
+    },
+    {
+      "time": "2012-10-06 14:00",
+      "actual": 576,
+      "predicted": 515.0
+    },
+    {
+      "time": "2012-10-06 15:00",
+      "actual": 620,
+      "predicted": 645.8
+    },
+    {
+      "time": "2012-10-06 16:00",
+      "actual": 659,
+      "predicted": 582.4
+    },
+    {
+      "time": "2012-10-06 17:00",
+      "actual": 610,
+      "predicted": 557.8
+    },
+    {
+      "time": "2012-10-06 18:00",
+      "actual": 495,
+      "predicted": 481.5
+    },
+    {
+      "time": "2012-10-06 19:00",
+      "actual": 341,
+      "predicted": 399.8
+    },
+    {
+      "time": "2012-10-06 20:00",
+      "actual": 247,
+      "predicted": 308.5
+    },
+    {
+      "time": "2012-10-06 21:00",
+      "actual": 215,
+      "predicted": 187.1
+    },
+    {
+      "time": "2012-10-06 22:00",
+      "actual": 185,
+      "predicted": 174.1
+    },
+    {
+      "time": "2012-10-06 23:00",
+      "actual": 179,
+      "predicted": 133.1
+    },
+    {
+      "time": "2012-10-07 00:00",
+      "actual": 127,
+      "predicted": 96.2
+    },
+    {
+      "time": "2012-10-07 01:00",
+      "actual": 109,
+      "predicted": 76.5
+    },
+    {
+      "time": "2012-10-07 02:00",
+      "actual": 74,
+      "predicted": 55.7
+    },
+    {
+      "time": "2012-10-07 03:00",
+      "actual": 22,
+      "predicted": 35.0
+    },
+    {
+      "time": "2012-10-07 04:00",
+      "actual": 11,
+      "predicted": 9.4
+    },
+    {
+      "time": "2012-10-07 05:00",
+      "actual": 10,
+      "predicted": 15.7
+    },
+    {
+      "time": "2012-10-07 06:00",
+      "actual": 23,
+      "predicted": 27.8
+    },
+    {
+      "time": "2012-10-07 07:00",
+      "actual": 35,
+      "predicted": 48.8
+    },
+    {
+      "time": "2012-10-07 08:00",
+      "actual": 62,
+      "predicted": 83.1
+    },
+    {
+      "time": "2012-10-07 09:00",
+      "actual": 86,
+      "predicted": 122.0
+    },
+    {
+      "time": "2012-10-07 10:00",
+      "actual": 185,
+      "predicted": 317.2
+    },
+    {
+      "time": "2012-10-07 11:00",
+      "actual": 336,
+      "predicted": 378.0
+    },
+    {
+      "time": "2012-10-07 12:00",
+      "actual": 392,
+      "predicted": 399.0
+    },
+    {
+      "time": "2012-10-07 13:00",
+      "actual": 320,
+      "predicted": 409.3
+    },
+    {
+      "time": "2012-10-07 14:00",
+      "actual": 314,
+      "predicted": 387.5
+    },
+    {
+      "time": "2012-10-07 15:00",
+      "actual": 306,
+      "predicted": 201.2
+    },
+    {
+      "time": "2012-10-07 16:00",
+      "actual": 333,
+      "predicted": 154.4
+    },
+    {
+      "time": "2012-10-07 17:00",
+      "actual": 157,
+      "predicted": 174.0
+    },
+    {
+      "time": "2012-10-07 18:00",
+      "actual": 106,
+      "predicted": 149.4
+    },
+    {
+      "time": "2012-10-07 19:00",
+      "actual": 114,
+      "predicted": 194.2
+    },
+    {
+      "time": "2012-10-07 20:00",
+      "actual": 116,
+      "predicted": 145.7
+    },
+    {
+      "time": "2012-10-07 21:00",
+      "actual": 113,
+      "predicted": 123.0
+    },
+    {
+      "time": "2012-10-07 22:00",
+      "actual": 79,
+      "predicted": 101.1
+    },
+    {
+      "time": "2012-10-07 23:00",
+      "actual": 80,
+      "predicted": 71.8
+    }
+  ],
+  "importance": [
+    {
+      "feature": "hr",
+      "increase_mae": 167.648,
+      "std": 1.547
+    },
+    {
+      "feature": "workingday",
+      "increase_mae": 32.141,
+      "std": 1.12
+    },
+    {
+      "feature": "hum",
+      "increase_mae": 15.696,
+      "std": 0.321
+    },
+    {
+      "feature": "weekday",
+      "increase_mae": 8.978,
+      "std": 0.164
+    },
+    {
+      "feature": "temp",
+      "increase_mae": 4.847,
+      "std": 0.237
+    },
+    {
+      "feature": "weathersit",
+      "increase_mae": 2.042,
+      "std": 0.194
+    },
+    {
+      "feature": "holiday",
+      "increase_mae": 0.617,
+      "std": 0.045
+    },
+    {
+      "feature": "windspeed",
+      "increase_mae": 0.322,
+      "std": 0.095
+    },
+    {
+      "feature": "season",
+      "increase_mae": 0.002,
+      "std": 0.007
+    },
+    {
+      "feature": "yr",
+      "increase_mae": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "mnth",
+      "increase_mae": -0.385,
+      "std": 0.182
+    }
+  ]
+}

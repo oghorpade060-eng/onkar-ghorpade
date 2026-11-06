@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BikeWise: an explainable bike demand machine-learning project by Onkar Ghorpade.">
+  <title>BikeWise · Onkar Ghorpade</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <aside class="sidebar">
+    <a href="#overview" class="brand"><span class="brand-icon">b.</span><span>BikeWise<small>DEMAND EXPLORER</small></span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <nav aria-label="Main navigation">
+      <a href="#overview" class="nav-item active" aria-current="page"><span aria-hidden="true">◫</span> Overview</a>
+      <a href="#scenario" class="nav-item"><span aria-hidden="true">↗</span> Scenario lab</a>
+      <a href="#models" class="nav-item"><span aria-hidden="true">≋</span> Model evaluation</a>
+      <a href="#learn" class="nav-item"><span aria-hidden="true">⌘</span> Learn the project</a>
+    </nav>
+    <div class="sidebar-note"><span class="small-dot"></span> REAL DATA. CLEAR LIMITS.<p>Explore historical demand.<br>Understand the model.</p><span class="year-tag">2011 — 2012 ARCHIVE</span></div>
+    <div class="author"><span class="avatar">OG</span><div>Onkar Ghorpade<small>AI &amp; Data Science student</small></div></div>
+  </aside>
+  <main id="main">
+    <header class="topbar"><span>PORTFOLIO / BIKEWISE</span><span id="status" class="status">Loading local model…</span></header>
+    <div id="global-error" role="alert" class="error" hidden></div>
+    <section id="overview" class="view">
+      <div class="hero"><div><p class="eyebrow">MACHINE LEARNING, MADE VISIBLE</p><h1>A clearer picture<br>of urban demand<span>.</span></h1><p class="lead">How do time and weather shape bike rentals?<br>Explore the data, compare models, and test a scenario.</p></div><a class="button primary" href="#scenario">Open scenario lab <span aria-hidden="true">↗</span></a></div>
+      <div class="metrics">
+        <article class="metric"><span class="metric-label">HOURLY OBSERVATIONS</span><strong id="rows">—</strong><span>Capital Bikeshare · UCI dataset</span></article>
+        <article class="metric"><span class="metric-label">TEST MAE</span><strong id="mae">—</strong><span>Average error in bikes per hour</span></article>
+        <article class="metric"><span class="metric-label">TEST R²</span><strong id="r2">—</strong><span>Held-out October–December 2012</span></article>
+        <article class="metric accent"><span class="metric-label">SELECTED MODEL</span><strong id="winner" class="model-name">—</strong><span>Chosen by validation MAE</span></article>
+      </div>
+      <div class="chart-grid">
+        <article class="panel wide"><div class="panel-heading"><div><p class="eyebrow">THE HELD-OUT WEEK</p><h2>Actual demand meets prediction</h2></div><div class="legend"><span><i class="dot actual"></i>Actual</span><span><i class="dot predicted"></i>Predicted</span></div></div><div id="actual-chart" class="chart" aria-label="Actual and predicted demand in the first 168 test observations"></div><p class="caption">First 168 observations of the untouched test period. Calendar and observed weather are inputs; this is not a live forecast.</p></article>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">DAILY RHYTHM</p><h2>When do people ride?</h2></div></div><div class="legend"><span><i class="dot actual"></i>Working day</span><span><i class="dot secondary"></i>Weekend / holiday</span></div><div id="hour-chart" class="chart" aria-label="Mean demand by hour and working-day status"></div><p class="caption">Mean rentals by hour across the full archive. Commuting patterns are associations, not proof of cause.</p></article>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">MODEL INSIGHT</p><h2>Which inputs matter?</h2></div></div><div id="importance" class="importance"></div><p class="caption">Increase in validation MAE when one input is shuffled. Higher means the fitted model relies on that input more.</p></article>
+      </div>
+      <a class="next-link" href="#models">See the evaluation method and all three models <span aria-hidden="true">→</span></a>
+    </section>
+    <section id="scenario" class="view" hidden>
+      <div class="page-title"><p class="eyebrow">CHANGE THE INPUTS. OBSERVE THE MODEL.</p><h1>Scenario lab<span>.</span></h1><p class="lead">Estimate hourly bike rentals for a date in the historical archive.</p></div>
+      <div class="scenario-grid"><article class="panel"><h2>Set the conditions</h2><p class="caption">The date supplies the original season, holiday and working-day values.</p>
+        <div class="presets" aria-label="Scenario presets"><button type="button" data-preset="commute">Morning commute</button><button type="button" data-preset="rain">Rainy evening</button><button type="button" data-preset="weekend">Weekend afternoon</button></div>
+        <form id="prediction-form">
+          <div class="form-grid"><label>Archive date<input id="date" name="date" type="date" min="2011-01-01" max="2012-12-31" value="2012-10-15" required></label><label>Hour of day<select id="hour" name="hour"></select></label></div>
+          <label>Weather<select id="weather" name="weather"><option value="1">Clear / partly cloudy</option><option value="2">Mist / cloudy</option><option value="3">Light rain / light snow</option></select></label>
+          <div class="slider-label"><label for="temperature">Temperature</label><output for="temperature" id="temperature-value">20 °C</output></div><input id="temperature" name="temperature" type="range" min="-8" max="39" value="20" step="1">
+          <div class="slider-label"><label for="humidity">Humidity</label><output for="humidity" id="humidity-value">55%</output></div><input id="humidity" name="humidity" type="range" min="0" max="100" value="55" step="1">
+          <div class="slider-label"><label for="wind">Wind speed</label><output for="wind" id="wind-value">10 km/h</output></div><input id="wind" name="wind" type="range" min="0" max="67" value="10" step="1">
+          <button type="submit" class="button primary full" id="predict-button">Estimate demand <span aria-hidden="true">↗</span></button>
+        </form><p id="predict-error" role="alert" class="error" hidden></p>
+      </article><div><article class="estimate" aria-live="polite"><p class="eyebrow">ESTIMATED HOURLY RENTALS</p><div><strong id="prediction">—</strong><span>bikes / hour</span></div><p id="prediction-context">Choose a scenario and run an estimate.</p><div class="estimate-divider"></div><p id="prediction-caution">An estimate from historical data, not a guarantee of future demand.</p></article><article class="panel day-panel"><h2>A day under these conditions</h2><div id="scenario-chart" class="chart"><p class="empty">Your 24-hour scenario will appear here.</p></div><p class="caption">Weather is held constant for all 24 hours. This is a model sensitivity view, not an actual weather forecast.</p></article></div></div>
+    </section>
+    <section id="models" class="view" hidden>
+      <div class="page-title"><p class="eyebrow">MEASURE BEFORE YOU CLAIM</p><h1>Model evaluation<span>.</span></h1><p class="lead">Three models. One chronological split. No test-set tuning.</p></div>
+      <article class="panel"><h2>Validation chooses. Test evaluates.</h2><p class="caption">Each candidate is first fitted on the training period. The lowest validation MAE selects the winner. Models are then refitted on train + validation before this final test comparison.</p><div class="table-wrap"><table><thead><tr><th>Model</th><th>Validation MAE ↓</th><th>Test MAE ↓</th><th>Test RMSE ↓</th><th>Test R² ↑</th></tr></thead><tbody id="model-table"></tbody></table></div></article>
+      <div class="two-columns"><article class="panel"><h2>Keep the future unseen</h2><div id="splits" class="splits"></div><p class="caption">Training transformations are fitted inside each pipeline. Early stopping is disabled to avoid an internal random validation split.</p></article><article class="panel"><h2>What the scores mean</h2><dl><dt>MAE · mean absolute error</dt><dd>Average size of a prediction error, in bikes per hour. Lower is better.</dd><dt>RMSE · root mean squared error</dt><dd>Gives larger errors more weight. Lower is better.</dd><dt>R² · coefficient of determination</dt><dd>Compares squared error with a mean-target reference on the test data. It is not a percentage accuracy and can be negative.</dd></dl></article></div>
+      <article class="panel limitation"><h2>What this project does not prove</h2><p>The data comes from one bike-sharing system in 2011–2012. Performance here does not establish accuracy for present-day cities. Test inputs include recorded weather; a real future forecast would need weather forecasts available at prediction time. Extreme weather has very few examples. These estimates are for learning and scenario exploration.</p><p><strong>Leakage prevented:</strong> <code>casual</code> and <code>registered</code> add up to the target <code>cnt</code>, so they never enter the model. The row identifier and raw date are also excluded from features.</p></article>
+    </section>
+    <section id="learn" class="view" hidden>
+      <div class="page-title"><p class="eyebrow">UNDERSTAND IT. THEN PRESENT IT.</p><h1>Learn the project<span>.</span></h1><p class="lead">An AI &amp; Data Science walkthrough you can explain in class.</p></div>
+      <div class="two-columns"><article class="panel"><span class="step">01 / PROBLEM</span><h2>Predict a quantity</h2><p>The question is: how many bike rentals might happen in one hour? The answer is a number, so this is <strong>regression</strong>, not classification.</p></article><article class="panel"><span class="step">02 / DATA</span><h2>Turn observations into features</h2><p>Each row is one recorded hour. Inputs include hour, month, working-day status, weather, temperature, humidity and wind. The target is total rental count.</p></article><article class="panel"><span class="step">03 / PREPARATION</span><h2>Keep the experiment fair</h2><p>Sort by time, separate past from future, encode categories and scale numerical inputs. Fit preprocessing only on the current training split.</p></article><article class="panel"><span class="step">04 / LEARNING</span><h2>Compare a simple starting point</h2><p>The mean baseline predicts one average. Ridge learns weighted relationships. Gradient boosting combines small trees that improve earlier predictions.</p></article><article class="panel"><span class="step">05 / EVALUATION</span><h2>Measure unseen performance</h2><p>Choose using validation MAE. Evaluate once on the held-out test period. Report MAE, RMSE and R² alongside the dates and limitations.</p></article><article class="panel"><span class="step">06 / APPLICATION</span><h2>Put the model to work</h2><p>The browser sends scenario inputs to Flask. The server validates them, applies the trained pipeline, and returns a count and a 24-hour curve.</p></article></div>
+      <article class="panel pitch"><p class="eyebrow">YOUR 30-SECOND EXPLANATION</p><p>“BikeWise is my AI &amp; Data Science portfolio project. It predicts hourly bike rental demand using calendar and weather features. I compare a mean baseline, Ridge regression and gradient boosting using a chronological split. I select the model on validation data, report test errors, and explain its limits through an interactive dashboard.”</p></article>
+      <article class="panel"><h2>मराठीत सोपं स्पष्टीकरण</h2><p>या प्रोजेक्टमध्ये वेळ आणि हवामान पाहून एका तासात किती सायकली भाड्याने घेतल्या जातील याचा अंदाज करतो. जुन्या डेटावर मॉडेल शिकते. नंतरच्या वेगळ्या डेटावर त्याची चूक मोजतो. उत्तर एक संख्या असल्यामुळे हा <strong>Regression</strong> प्रोजेक्ट आहे. अंदाज म्हणजे हमखास बरोबर उत्तर नाही.</p></article>
+    </section>
+    <footer>Built by Onkar Ghorpade <span>·</span> Educational portfolio project <span>·</span> <a href="https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset" target="_blank" rel="noopener noreferrer">Dataset: UCI / H. Fanaee-T ↗</a></footer>
+  </main>
+</body>
+</html>

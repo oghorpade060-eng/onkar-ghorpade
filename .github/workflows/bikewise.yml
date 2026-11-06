@@ -1,0 +1,28 @@
+name: BikeWise checks
+on:
+  push:
+    paths: ['projects/bikewise/**', '.github/workflows/bikewise.yml']
+  pull_request:
+    paths: ['projects/bikewise/**', '.github/workflows/bikewise.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  train-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: projects/bikewise
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: projects/bikewise/requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - run: python download_data.py
+      - run: python train.py
+      - run: python -m pytest -q
+

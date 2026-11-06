@@ -1,0 +1,102 @@
+{
+  "selected_model": "Gradient boosting",
+  "selection_rule": "Lowest validation MAE; test set never used to choose a model.",
+  "dataset_rows": 17379,
+  "dataset_sha256": "e03de4ee4ef4dc376ac6e04bf829673c6269e8eba5c60fa121640fa2f829504f",
+  "features": [
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+    "temp",
+    "hum",
+    "windspeed"
+  ],
+  "excluded_columns": [
+    "instant",
+    "dteday",
+    "atemp",
+    "casual",
+    "registered",
+    "cnt"
+  ],
+  "splits": {
+    "train": {
+      "rows": 13003,
+      "start": "2011-01-01",
+      "end": "2012-06-30"
+    },
+    "validation": {
+      "rows": 2208,
+      "start": "2012-07-01",
+      "end": "2012-09-30"
+    },
+    "test": {
+      "rows": 2168,
+      "start": "2012-10-01",
+      "end": "2012-12-31"
+    }
+  },
+  "final_fit": {
+    "rows": 15211,
+    "start": "2011-01-01",
+    "end": "2012-09-30"
+  },
+  "models": [
+    {
+      "model": "Mean baseline",
+      "validation": {
+        "mae": 197.829,
+        "rmse": 260.65,
+        "r2": -0.2726
+      },
+      "test": {
+        "mae": 156.868,
+        "rmse": 204.428,
+        "r2": -0.0284
+      }
+    },
+    {
+      "model": "Ridge regression",
+      "validation": {
+        "mae": 111.93,
+        "rmse": 146.839,
+        "r2": 0.5961
+      },
+      "test": {
+        "mae": 89.511,
+        "rmse": 121.782,
+        "r2": 0.635
+      }
+    },
+    {
+      "model": "Gradient boosting",
+      "validation": {
+        "mae": 50.238,
+        "rmse": 76.957,
+        "r2": 0.8891
+      },
+      "test": {
+        "mae": 46.994,
+        "rmse": 71.129,
+        "r2": 0.8755
+      }
+    }
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5"
+  },
+  "method": {
+    "seed": 42,
+    "clamp_negative_predictions": true,
+    "early_stopping": false,
+    "importance": "Permutation importance on validation set, before refitting. Increase in MAE; association, not causation."
+  }
+}
