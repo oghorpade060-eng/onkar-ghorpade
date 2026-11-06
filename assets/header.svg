@@ -1,17 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
-  <title id="title">Onkar Ghorpade — AI and Data Science student</title>
-  <desc id="desc">A dark green portfolio banner with lime accents and an abstract connected-node illustration.</desc>
-  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#152820"/><stop offset="1" stop-color="#203d31"/></linearGradient></defs>
-  <rect width="1200" height="330" rx="20" fill="url(#bg)"/>
-  <path d="M0 310H1200" stroke="#d8f58b" stroke-width="4"/>
-  <g font-family="Arial, Helvetica, sans-serif">
-    <rect x="48" y="42" width="42" height="42" rx="12" fill="#d8f58b"/><text x="69" y="69" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3023">OG</text>
-    <text x="108" y="67" font-size="12" letter-spacing="3" fill="#c5dbc8">LEARN. BUILD. EXPLAIN.</text>
-    <text x="48" y="157" font-size="57" font-weight="700" letter-spacing="-2" fill="#f5f8f2">Onkar Ghorpade</text>
-    <text x="50" y="199" font-size="22" fill="#d8f58b">AI &amp; Data Science student</text>
-    <text x="50" y="251" font-size="15" fill="#b8cfc0">Practical projects. Reproducible results. Continuous learning.</text>
-    <g stroke="#4d6c56" stroke-width="1.5" fill="none"><path d="M862 97L960 61L1071 103L1109 203L1013 255L898 223Z"/><path d="M862 97L1013 255M960 61L898 223M1071 103L898 223M1109 203L960 61"/></g>
-    <g fill="#d8f58b"><circle cx="862" cy="97" r="7"/><circle cx="960" cy="61" r="5"/><circle cx="1071" cy="103" r="9"/><circle cx="1109" cy="203" r="6"/><circle cx="1013" cy="255" r="8"/><circle cx="898" cy="223" r="5"/></g>
-    <circle cx="986" cy="158" r="35" fill="#1e372a" stroke="#7b9c6e"/><text x="986" y="166" text-anchor="middle" fill="#d8f58b" font-size="21">AI</text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+<title id="title">Onkar Ghorpade — AI and Data Science student</title><desc id="desc">A forest-green portfolio header with a connected-node illustration and Python, SQL and machine learning focus.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#132b23"/><stop offset="1" stop-color="#254936"/></linearGradient></defs><rect width="1200" height="280" rx="18" fill="url(#bg)"/><rect x="0" y="270" width="1200" height="4" fill="#d8f58b"/>
+<g font-family="Arial, Helvetica, sans-serif"><rect x="43" y="34" width="36" height="36" rx="10" fill="#d8f58b"/><text x="61" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#173626">OG</text><text x="94" y="57" font-size="12" letter-spacing="3" fill="#c5dbc8">STUDENT PORTFOLIO</text><text x="42" y="143" font-size="58" font-weight="700" letter-spacing="-2" fill="#f5f8f2">Onkar Ghorpade</text><text x="45" y="184" font-size="23" fill="#d8f58b">Artificial Intelligence &amp; Data Science</text><text x="45" y="232" font-size="17" fill="#c7dbcb">Python  /  SQL  /  Machine learning</text>
+<g stroke="#648569" stroke-width="1.4" fill="none"><path d="M867 80L967 45L1072 88L1113 186L1010 234L897 205Z"/><path d="M867 80L1010 234M967 45L897 205M1072 88L897 205M1113 186L967 45"/></g><g fill="#d8f58b"><circle cx="867" cy="80" r="7"/><circle cx="967" cy="45" r="5"/><circle cx="1072" cy="88" r="8"/><circle cx="1113" cy="186" r="6"/><circle cx="1010" cy="234" r="7"/><circle cx="897" cy="205" r="5"/></g><circle cx="990" cy="138" r="34" fill="#23432f" stroke="#86a477"/><text x="990" y="146" text-anchor="middle" fill="#d8f58b" font-size="22">AI</text></g></svg>

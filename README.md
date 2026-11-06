@@ -1,52 +1,87 @@
-<p align="center"><img src="assets/header.svg" width="100%" alt="Onkar Ghorpade — AI & Data Science student. Learn. Build. Explain."></p>
+<p align="center"><img src="assets/header.svg" width="100%" alt="Onkar Ghorpade — AI & Data Science student. Python, SQL and machine learning."></p>
 
-<p align="center"><a href="#about">About</a> &nbsp;·&nbsp; <a href="#featured-project">Featured project</a> &nbsp;·&nbsp; <a href="#selected-repositories">Repositories</a> &nbsp;·&nbsp; <a href="#learning-focus">Learning</a></p>
+<p align="center">
+  <a href="https://www.linkedin.com/in/onkar-ghorpade-3b1162376/">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="https://www.kaggle.com/OnkarGhorpade">Kaggle</a> &nbsp;·&nbsp;
+  <a href="mailto:oghorpade060@gmail.com">Email</a> &nbsp;·&nbsp;
+  <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/PROJECT_INDEX.md">Project & guide index</a>
+</p>
 
-## About
+## About me
 
-I'm **Onkar Ghorpade**, an **Artificial Intelligence & Data Science student** learning through practical projects. I'm developing my skills in Python, data analysis, machine learning, web applications and DevOps.
+I'm **Onkar Ghorpade**, an **Artificial Intelligence & Data Science student**. I'm learning Python, SQL and machine learning by building small applications, checking their results and writing down what I understand.
 
-My aim is to build software I can run, evaluate and explain clearly.
+My current focus is practical: work with a dataset, choose a fair evaluation, make the result usable, and explain where it can fail.
 
-## Featured project
+## Selected projects
 
-### [BikeWise · Bike Demand Prediction](projects/bikewise)
+<table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/tree/main/projects/bikewise"><img src="assets/bikewise-card.svg" width="100%" alt="BikeWise: regression. Test MAE 46.99 bikes per hour."></a>
+  <p>Estimate hourly bike rentals from time and weather. Compare three models using a chronological split, then explore scenarios in a Flask dashboard.</p>
+  <p><strong>Python · pandas · scikit-learn · Flask</strong></p>
+  <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/tree/main/projects/bikewise">Code & setup</a> · <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/LEARNING_GUIDE.md">Study & viva</a>
+</td>
+<td width="50%" valign="top">
+  <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/tree/main/projects/messagelab"><img src="assets/messagelab-card.svg" width="100%" alt="MessageLab: NLP classification. Test spam F1 0.949."></a>
+  <p>Classify English SMS messages, inspect word signals and compare precision with recall. Duplicate messages are removed before splitting.</p>
+  <p><strong>Python · TF–IDF · scikit-learn · Flask</strong></p>
+  <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/tree/main/projects/messagelab">Code & setup</a> · <a href="https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/MESSAGELAB_LESSON.md">Study & viva</a>
+</td>
+</tr>
+</table>
 
-A complete machine-learning project that estimates hourly bike rentals from calendar and weather conditions. It includes a reproducible training pipeline, a Flask dashboard, input validation, automated tests and a study guide.
+### [LibraryLens · SQL analytics](https://github.com/oghorpade060-eng/onkar-ghorpade/tree/main/projects/librarylens)
 
-**Python · pandas · scikit-learn · Flask · JavaScript**
+Six SQL reports covering borrowing patterns, overdue loans and inventory. Uses **366 synthetic loans**, joins, CTEs, window functions and boundary-date tests. Generates an offline HTML dashboard and CSV exports using only Python's standard library.
 
-| Dataset | Evaluation | Measured result |
+**Python · SQLite · SQL · Data analysis** &nbsp; [Code, setup & exercises →](https://github.com/oghorpade060-eng/onkar-ghorpade/tree/main/projects/librarylens)
+
+<sub>ML results are measured on historical holdouts. LibraryLens uses synthetic data. The apps run locally; the repository includes source code, setup commands, tests and limitations.</sub>
+
+## Other repositories
+
+| Repository | What it covers | Context |
 | :--- | :--- | :--- |
-| 17,379 historical hourly observations | Chronological train / validation / test split | Test MAE **46.99 bikes/hour** · R² **0.876** |
+| [YatriFlow](https://github.com/oghorpade060-eng/yatrifliow) | React, TypeScript and Supabase authentication | Fork of [omlaware07-code/yatrifliow](https://github.com/omlaware07-code/yatrifliow); source credited. |
+| [Library Management Platform](https://github.com/oghorpade060-eng/library-management-platform) | Flask API, Docker, Jenkins and Kubernetes | DevOps coursework; the repository README retains upstream source references. |
+| [Incredible Indian Heritage](https://github.com/oghorpade060-eng/ADP-PROJECT) | HTML, CSS and content pages | Application Development Practices project. |
 
-These results come from a historical test period, not a live forecast. R² is not percentage accuracy.
+## What I'm learning
 
-[Explore the code →](projects/bikewise) &nbsp; [See evaluation results →](projects/bikewise/reports/metrics.json) &nbsp; [Learn how it works →](docs/LEARNING_GUIDE.md)
+| Area | Current practice |
+| :--- | :--- |
+| Python & data | Functions, NumPy, pandas, cleaning and visualization |
+| Machine learning | Regression, classification, baselines and leakage prevention |
+| SQL | Joins, grouping, CTEs, window functions and date handling |
+| Applications | Flask, JavaScript, React and TypeScript |
+| Development | Git, tests, GitHub Actions, Docker and CI/CD |
 
-## Selected repositories
+Next: build a stronger foundation in PyTorch, then study retrieval and RAG. These are learning goals, not completed projects or professional experience.
 
-| Repository | Focus | Context |
-| :--- | :--- | :--- |
-| [YatriFlow](https://github.com/oghorpade060-eng/yatrifliow) | React, TypeScript and Supabase; tourism planning and user accounts | Fork of [omlaware07-code/yatrifliow](https://github.com/omlaware07-code/yatrifliow). [Authentication walkthrough](docs/YATRIFLOW_AUTHENTICATION.md). |
-| [Library Management Platform](https://github.com/oghorpade060-eng/library-management-platform) | Flask REST API, tests, Docker, Jenkins and Kubernetes | Application and DevOps practice repository. |
-| [Incredible Indian Heritage](https://github.com/oghorpade060-eng/ADP-PROJECT) | HTML and CSS; pages about monuments, culture and history | Application Development Practices project. |
+## AI & Data Science simplified
 
-## Tools across my repositories
+| Idea | In simple terms |
+| :--- | :--- |
+| Regression | Predict a number, such as hourly bike rentals. |
+| Classification | Choose a category, such as ham or spam. |
+| Data leakage | Let information from the answer or evaluation data influence training. |
+| SQL analytics | Use queries to answer clear questions about related tables. |
 
-**Data & ML** &nbsp; Python · NumPy · pandas · scikit-learn  
-**Applications** &nbsp; Flask · React · TypeScript · HTML · CSS · Supabase  
-**Development** &nbsp; Git · GitHub · pytest · Docker · Jenkins · Kubernetes
+[More concepts with examples and Marathi explanations →](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/AI_DS_SIMPLIFIED.md)
 
-## Learning focus
+## Featured guides
 
-- Build reproducible data-analysis and machine-learning workflows.
-- Understand data leakage, model evaluation and explainability.
-- Connect trained models to useful applications.
-- Improve documentation, testing and deployment skills.
+- [Project setup and guide index](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/PROJECT_INDEX.md)
+- [26-week study plan with official references](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/STUDY_PLAN.md)
+- [Week 1: Python practice](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/WEEK_01.md)
+- [BikeWise: concepts, request flow and viva](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/LEARNING_GUIDE.md)
+- [MessageLab: NLP, metrics and viva](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/MESSAGELAB_LESSON.md)
+- [YatriFlow: authentication, credentials and tokens](https://github.com/oghorpade060-eng/onkar-ghorpade/blob/main/docs/YATRIFLOW_AUTHENTICATION.md)
 
-## Connect
+## Connect with me
 
-Find my work on [GitHub · @oghorpade060-eng](https://github.com/oghorpade060-eng).
+[LinkedIn](https://www.linkedin.com/in/onkar-ghorpade-3b1162376/) · [Kaggle](https://www.kaggle.com/OnkarGhorpade) · [oghorpade060@gmail.com](mailto:oghorpade060@gmail.com)
 
-<sub>This portfolio includes original project work, coursework and clearly identified forks. Dataset and source credits are included in the project documentation.</sub>
+<sub>Source and dataset credits are included in the project documentation. The learning log is for recording work I have run, changed and can explain.</sub>

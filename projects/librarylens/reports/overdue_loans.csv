@@ -1,0 +1,5 @@
+loan_id,member_id,department,title,due_at,days_overdue
+322,M025,AI & DS,SQL in Practice,2026-10-23,9
+323,M016,Electronics,Neural Network Notes,2026-10-23,9
+328,M020,Electronics,Probability Workbook,2026-10-27,5
+334,M019,Mechanical,Neural Network Notes,2026-10-30,2

@@ -1,0 +1,291 @@
+{
+  "data_kind": "synthetic",
+  "seed": 42,
+  "as_of": "2026-11-01",
+  "tables": {
+    "books": 12,
+    "members": 48
+  },
+  "queries": {
+    "overview": [
+      {
+        "total_loans": 366,
+        "borrowing_members": 48,
+        "open_loans": 26,
+        "overdue_loans": 4
+      }
+    ],
+    "category_demand": [
+      {
+        "category": "Programming",
+        "loans": 131,
+        "borrowers": 46
+      },
+      {
+        "category": "AI & Data",
+        "loans": 94,
+        "borrowers": 42
+      },
+      {
+        "category": "Mathematics",
+        "loans": 92,
+        "borrowers": 41
+      },
+      {
+        "category": "Systems",
+        "loans": 49,
+        "borrowers": 32
+      }
+    ],
+    "monthly_activity": [
+      {
+        "month": "2026-05-01",
+        "loans": 71,
+        "previous_month": null,
+        "change_in_loans": null
+      },
+      {
+        "month": "2026-06-01",
+        "loans": 55,
+        "previous_month": 71,
+        "change_in_loans": -16
+      },
+      {
+        "month": "2026-07-01",
+        "loans": 61,
+        "previous_month": 55,
+        "change_in_loans": 6
+      },
+      {
+        "month": "2026-08-01",
+        "loans": 61,
+        "previous_month": 61,
+        "change_in_loans": 0
+      },
+      {
+        "month": "2026-09-01",
+        "loans": 59,
+        "previous_month": 61,
+        "change_in_loans": -2
+      },
+      {
+        "month": "2026-10-01",
+        "loans": 59,
+        "previous_month": 59,
+        "change_in_loans": 0
+      },
+      {
+        "month": "2026-11-01",
+        "loans": 0,
+        "previous_month": 59,
+        "change_in_loans": -59
+      }
+    ],
+    "category_ranking": [
+      {
+        "book_id": 8,
+        "title": "Machine Learning Lab",
+        "category": "AI & Data",
+        "loans": 40,
+        "category_rank": 1
+      },
+      {
+        "book_id": 9,
+        "title": "Working with Data",
+        "category": "AI & Data",
+        "loans": 30,
+        "category_rank": 2
+      },
+      {
+        "book_id": 10,
+        "title": "Neural Network Notes",
+        "category": "AI & Data",
+        "loans": 24,
+        "category_rank": 3
+      },
+      {
+        "book_id": 5,
+        "title": "Probability Workbook",
+        "category": "Mathematics",
+        "loans": 35,
+        "category_rank": 1
+      },
+      {
+        "book_id": 7,
+        "title": "Statistics Through Examples",
+        "category": "Mathematics",
+        "loans": 30,
+        "category_rank": 2
+      },
+      {
+        "book_id": 6,
+        "title": "Linear Algebra Notes",
+        "category": "Mathematics",
+        "loans": 27,
+        "category_rank": 3
+      },
+      {
+        "book_id": 4,
+        "title": "Data Structures",
+        "category": "Programming",
+        "loans": 36,
+        "category_rank": 1
+      },
+      {
+        "book_id": 2,
+        "title": "SQL in Practice",
+        "category": "Programming",
+        "loans": 36,
+        "category_rank": 1
+      },
+      {
+        "book_id": 1,
+        "title": "Python Lab Notes",
+        "category": "Programming",
+        "loans": 32,
+        "category_rank": 2
+      },
+      {
+        "book_id": 3,
+        "title": "Java Fundamentals",
+        "category": "Programming",
+        "loans": 27,
+        "category_rank": 3
+      },
+      {
+        "book_id": 11,
+        "title": "Linux Lab",
+        "category": "Systems",
+        "loans": 27,
+        "category_rank": 1
+      },
+      {
+        "book_id": 12,
+        "title": "Networks Workbook",
+        "category": "Systems",
+        "loans": 22,
+        "category_rank": 2
+      }
+    ],
+    "overdue_loans": [
+      {
+        "loan_id": 322,
+        "member_id": "M025",
+        "department": "AI & DS",
+        "title": "SQL in Practice",
+        "due_at": "2026-10-23",
+        "days_overdue": 9
+      },
+      {
+        "loan_id": 323,
+        "member_id": "M016",
+        "department": "Electronics",
+        "title": "Neural Network Notes",
+        "due_at": "2026-10-23",
+        "days_overdue": 9
+      },
+      {
+        "loan_id": 328,
+        "member_id": "M020",
+        "department": "Electronics",
+        "title": "Probability Workbook",
+        "due_at": "2026-10-27",
+        "days_overdue": 5
+      },
+      {
+        "loan_id": 334,
+        "member_id": "M019",
+        "department": "Mechanical",
+        "title": "Neural Network Notes",
+        "due_at": "2026-10-30",
+        "days_overdue": 2
+      }
+    ],
+    "inventory": [
+      {
+        "book_id": 10,
+        "title": "Neural Network Notes",
+        "total_copies": 3,
+        "borrowed_copies": 3,
+        "available_copies": 0
+      },
+      {
+        "book_id": 5,
+        "title": "Probability Workbook",
+        "total_copies": 4,
+        "borrowed_copies": 4,
+        "available_copies": 0
+      },
+      {
+        "book_id": 11,
+        "title": "Linux Lab",
+        "total_copies": 3,
+        "borrowed_copies": 2,
+        "available_copies": 1
+      },
+      {
+        "book_id": 4,
+        "title": "Data Structures",
+        "total_copies": 4,
+        "borrowed_copies": 2,
+        "available_copies": 2
+      },
+      {
+        "book_id": 6,
+        "title": "Linear Algebra Notes",
+        "total_copies": 4,
+        "borrowed_copies": 2,
+        "available_copies": 2
+      },
+      {
+        "book_id": 8,
+        "title": "Machine Learning Lab",
+        "total_copies": 6,
+        "borrowed_copies": 4,
+        "available_copies": 2
+      },
+      {
+        "book_id": 12,
+        "title": "Networks Workbook",
+        "total_copies": 3,
+        "borrowed_copies": 1,
+        "available_copies": 2
+      },
+      {
+        "book_id": 9,
+        "title": "Working with Data",
+        "total_copies": 5,
+        "borrowed_copies": 3,
+        "available_copies": 2
+      },
+      {
+        "book_id": 3,
+        "title": "Java Fundamentals",
+        "total_copies": 4,
+        "borrowed_copies": 1,
+        "available_copies": 3
+      },
+      {
+        "book_id": 1,
+        "title": "Python Lab Notes",
+        "total_copies": 5,
+        "borrowed_copies": 2,
+        "available_copies": 3
+      },
+      {
+        "book_id": 2,
+        "title": "SQL in Practice",
+        "total_copies": 5,
+        "borrowed_copies": 2,
+        "available_copies": 3
+      },
+      {
+        "book_id": 7,
+        "title": "Statistics Through Examples",
+        "total_copies": 4,
+        "borrowed_copies": 0,
+        "available_copies": 4
+      }
+    ]
+  }
+}

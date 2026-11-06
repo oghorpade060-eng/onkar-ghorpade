@@ -10,5 +10,9 @@ projects/bikewise/artifacts/*
 *.log
 projects/bikewise/data/hour.csv
 projects/bikewise/data/Readme.txt
+projects/messagelab/data/SMSSpamCollection
+projects/messagelab/artifacts/*
+!projects/messagelab/artifacts/.gitkeep
+projects/librarylens/library.db
 
 

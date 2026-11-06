@@ -1,0 +1,144 @@
+{
+  "dataset": {
+    "raw_rows": 5574,
+    "conflicting_keys": 0,
+    "conflicting_rows_removed": 0,
+    "duplicate_rows_removed": 415,
+    "unique_rows": 5159,
+    "labels": {
+      "ham": 4517,
+      "spam": 642
+    }
+  },
+  "data_sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+  "seed": 42,
+  "splits": {
+    "train": {
+      "rows": 3095,
+      "spam": 385,
+      "keys_sha256": "1938f271a48cd32e05e69eae17dd3195ea5cf0564abecb75423bf3f1a486a7e3"
+    },
+    "validation": {
+      "rows": 1032,
+      "spam": 129,
+      "keys_sha256": "7952ee0d181a5c387f4d99f38419267e1d2ee4fecf6b0b47f988d519bbad9bdc"
+    },
+    "test": {
+      "rows": 1032,
+      "spam": 128,
+      "keys_sha256": "a2aa6aff11be69a31298e6b7d06dc4100522efd101159dffcb8a9e670363216b"
+    }
+  },
+  "selected_model": "logistic_regression",
+  "selection_rule": "Highest validation spam F1; precision breaks ties",
+  "threshold": "Estimator default; no threshold tuning on the test set",
+  "confusion_matrix_order": [
+    "ham",
+    "spam"
+  ],
+  "models": {
+    "majority_baseline": {
+      "validation": {
+        "accuracy": 0.875,
+        "spam_precision": 0.0,
+        "spam_recall": 0.0,
+        "spam_f1": 0.0,
+        "confusion_matrix": [
+          [
+            903,
+            0
+          ],
+          [
+            129,
+            0
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.875968992248062,
+        "spam_precision": 0.0,
+        "spam_recall": 0.0,
+        "spam_f1": 0.0,
+        "confusion_matrix": [
+          [
+            904,
+            0
+          ],
+          [
+            128,
+            0
+          ]
+        ]
+      }
+    },
+    "naive_bayes": {
+      "validation": {
+        "accuracy": 0.9806201550387597,
+        "spam_precision": 1.0,
+        "spam_recall": 0.8449612403100775,
+        "spam_f1": 0.9159663865546218,
+        "confusion_matrix": [
+          [
+            903,
+            0
+          ],
+          [
+            20,
+            109
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.9815891472868217,
+        "spam_precision": 0.990990990990991,
+        "spam_recall": 0.859375,
+        "spam_f1": 0.9205020920502092,
+        "confusion_matrix": [
+          [
+            903,
+            1
+          ],
+          [
+            18,
+            110
+          ]
+        ]
+      }
+    },
+    "logistic_regression": {
+      "validation": {
+        "accuracy": 0.9864341085271318,
+        "spam_precision": 0.96,
+        "spam_recall": 0.9302325581395349,
+        "spam_f1": 0.9448818897637795,
+        "confusion_matrix": [
+          [
+            898,
+            5
+          ],
+          [
+            9,
+            120
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.9874031007751938,
+        "spam_precision": 0.952755905511811,
+        "spam_recall": 0.9453125,
+        "spam_f1": 0.9490196078431372,
+        "confusion_matrix": [
+          [
+            898,
+            6
+          ],
+          [
+            7,
+            121
+          ]
+        ]
+      }
+    }
+  },
+  "sklearn_version": "1.8.0"
+}

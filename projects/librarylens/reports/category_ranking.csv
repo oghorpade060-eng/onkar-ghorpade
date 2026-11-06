@@ -1,0 +1,13 @@
+book_id,title,category,loans,category_rank
+8,Machine Learning Lab,AI & Data,40,1
+9,Working with Data,AI & Data,30,2
+10,Neural Network Notes,AI & Data,24,3
+5,Probability Workbook,Mathematics,35,1
+7,Statistics Through Examples,Mathematics,30,2
+6,Linear Algebra Notes,Mathematics,27,3
+4,Data Structures,Programming,36,1
+2,SQL in Practice,Programming,36,1
+1,Python Lab Notes,Programming,32,2
+3,Java Fundamentals,Programming,27,3
+11,Linux Lab,Systems,27,1
+12,Networks Workbook,Systems,22,2
